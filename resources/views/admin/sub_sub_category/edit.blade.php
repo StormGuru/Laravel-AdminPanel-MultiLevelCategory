@@ -1,0 +1,27 @@
+@extends('layouts.admin')
+
+@section('content')
+
+
+<h1> Редактирование подподкатегории</h1>
+
+<form method="post" action="{{route('sub_sub_categories.update', $sub_sub_category->id)}}">
+    @csrf
+    @method('patch')
+  <div class="mb-3">
+    <label for="exampleInputEmail1" class="form-label">Название подподкатегории</label>
+    <input type="text" name="sub_sub_name" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" value="{{$sub_sub_category->sub_sub_name}}">
+  </div>
+ <div>
+   <p>Родительская категория</p>
+   <select class="form-select mb-3" aria-label="Default select example" name="sub_category_id">
+    @foreach($sub_ctgs as $sub_ctg)
+   <option value="{{$sub_ctg->id}}">{{$sub_ctg->sub_name}}</option>
+    @endforeach
+   </select>
+</div>
+
+  <button type="submit" class="btn btn-primary">Сохранить</button>
+</form>
+
+@endsection
