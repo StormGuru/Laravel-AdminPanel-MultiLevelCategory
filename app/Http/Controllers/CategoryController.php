@@ -41,7 +41,6 @@ class CategoryController extends Controller
         $data = request()->validate([
             'name' => 'required|string|min:3|max:30|unique:categories1'
         ]);
-        // dd($data);
         Category1::create($data);
         return redirect()->route('categories.index');
     }
@@ -60,7 +59,6 @@ class CategoryController extends Controller
     {
         $category1 = Category1::findOrFail($id);
         $sub_ctgs = $category1->sub_ctgs;
-        // dd($category1->sub_ctgs);
         return view('admin.category.show_category', compact('category1', 'sub_ctgs'));
     }
 
@@ -73,7 +71,6 @@ class CategoryController extends Controller
     public function edit($id)
     {
         $category1 = Category1::findOrFail($id); 
-        //dd('eeeeeeeeeee');
         return view('admin.category.edit', compact('category1'));
     }
 
