@@ -13,12 +13,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-// Route::get('/', function () {
-//     return view('welcome');
-// });
-
 Route::get('/', 'HomeController@index');
-
 
 Route::group(['middleware' => 'admin', 'prefix' => 'admin'], function(){
 Route::resource('/category', 'CategoryController')->names('categories');
