@@ -1,28 +1,8 @@
-
-
 @extends('layouts.admin')
-
 @section('content')
-
-
 <a href="{{route('categories.create')}}"><button type="button" class="btn btn-success mb-3">Добавить категорию</button></a>
 <a href="{{route('sub_categories.create')}}"><button type="button" class="btn btn-success mb-3">Добавить подкатегорию</button></a>
 <a href="{{route('sub_sub_categories.create')}}"><button type="button" class="btn btn-success mb-3">Добавить подподкатегорию</button></a>
-<!-- <form method="post" action="">
-<button type="submit" class="btn btn-success mb-3" name="add">Добавить категорию</button>
-<button type="submit" class="btn btn-success mb-3">Добавить подкатегорию</button>
-<button type="submit" class="btn btn-success mb-3">Добавить подподкатегорию</button>
-@if(isset($_POST['add']))
-  <div class="mb-3">
-    <label for="exampleInputEmail1" class="form-label">Название категории</label>
-    <input type="text" name="name" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-  </div>
-  <button type="submit" class="btn btn-primary">Добавить</button>
-  @else
-  <div></div>
-  @endif
-</form> -->
-
 <h1 class="mb-3">Категории</h1>
 @foreach($categories as $category)
 <table class="table table-dark">
@@ -38,15 +18,13 @@
              <a class="btn btn-danger" href="{{route('sub_categories.destroy', $s_category->id)}}">
         Удалить</a>
             </h4>
-         
-        </li>
+          </li>
                <ul>
                  @foreach($s_category->sub_sub_ctgs as $sub_sub_ctg)
-               <li>{{ $sub_sub_ctg->sub_sub_name  }}      
-                 <a href="{{route('sub_sub_categories.edit', $sub_sub_ctg->id)}}">Редактировать</a>
-                 <a class="text-danger" href="{{route('sub_sub_categories.destroy', $sub_sub_ctg->id)}}">Удалить</a>
-                </li>
-               
+                   <li>{{ $sub_sub_ctg->sub_sub_name  }}      
+                    <a href="{{route('sub_sub_categories.edit', $sub_sub_ctg->id)}}">Редактировать</a>
+                    <a class="text-danger" href="{{route('sub_sub_categories.destroy', $sub_sub_ctg->id)}}">Удалить</a>
+                   </li>
                 @endforeach
                </ul>
           @endforeach
@@ -59,5 +37,4 @@
   </tbody>
 </table>
 @endforeach
-
 @endsection
