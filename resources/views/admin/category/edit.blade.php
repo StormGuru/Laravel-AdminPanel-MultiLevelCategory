@@ -1,10 +1,6 @@
 @extends('layouts.admin')
-
 @section('content')
-
-
 <h1> Редактирование категории</h1>
-
 <form method="post" action="{{route('categories.update', $category1->id)}}">
     @csrf
     @method('patch')
@@ -14,5 +10,4 @@
   </div>
   <button type="submit" class="btn btn-primary">Сохранить</button>
 </form>
-
 @endsection
