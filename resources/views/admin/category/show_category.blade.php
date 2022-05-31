@@ -1,13 +1,6 @@
-<!-- <div>{{$category1->id}}</div>
-<div>{{$category1->name}}</div>
-hhhhhhhhhhhhhh -->
 @extends('layouts.admin')
-
 @section('content')
-
-
 <a href="{{route('sub_categories.create')}}"><button type="button" class="btn btn-success mb-3">Добавить подкатегорию</button></a>
-
 <h1 class="mb-3">Категория {{$category1->name}} </h1>
 @foreach($sub_ctgs as $sub_ctg)
 <table class="table table-dark">
@@ -22,5 +15,4 @@ hhhhhhhhhhhhhh -->
   </tbody>
 </table>
 @endforeach
-
 @endsection
