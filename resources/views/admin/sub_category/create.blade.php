@@ -1,12 +1,8 @@
 @extends('layouts.admin')
-
 @section('content')
-
-
 <h1> Добавление подкатегории</h1>
-
 <form method="post" action="{{route('sub_categories.store')}}">
-    @csrf
+  @csrf
   <div class="mb-3">
     <label for="exampleInputEmail1" class="form-label">Название подкатегории</label>
     <input type="text" name="sub_name" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
@@ -19,8 +15,6 @@
     @endforeach
    </select>
 </div>
-
   <button type="submit" class="btn btn-primary">Добавить</button>
 </form>
-
 @endsection
