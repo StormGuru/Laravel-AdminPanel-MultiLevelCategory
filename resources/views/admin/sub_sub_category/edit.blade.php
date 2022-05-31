@@ -1,10 +1,6 @@
 @extends('layouts.admin')
-
 @section('content')
-
-
 <h1> Редактирование подподкатегории</h1>
-
 <form method="post" action="{{route('sub_sub_categories.update', $sub_sub_category->id)}}">
     @csrf
     @method('patch')
@@ -20,8 +16,6 @@
     @endforeach
    </select>
 </div>
-
   <button type="submit" class="btn btn-primary">Сохранить</button>
 </form>
-
 @endsection
