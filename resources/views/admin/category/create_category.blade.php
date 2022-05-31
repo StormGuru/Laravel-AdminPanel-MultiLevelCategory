@@ -1,12 +1,8 @@
 @extends('layouts.admin')
-
 @section('content')
-
-
 <h1> Добавление категории</h1>
-
 <form method="post" action="{{route('categories.store')}}">
-    @csrf
+  @csrf
   <div class="mb-3">
     @error('name')
       <p class="text-danger">{{$message}}</p>
@@ -16,5 +12,4 @@
   </div>
   <button type="submit" class="btn btn-primary">Добавить</button>
 </form>
-
 @endsection
