@@ -14,11 +14,7 @@ class SubSubCategoryController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
-    {
-        //
-    }
-
+  
     /**
      * Show the form for creating a new resource.
      *
@@ -42,7 +38,6 @@ class SubSubCategoryController extends Controller
             'sub_sub_name' => 'string',
             'sub_category_id' => ''
         ]);
-        // dd($data);
         SubSubCategory::create($data);
         return redirect()->route('categories.index');
     }
@@ -53,11 +48,7 @@ class SubSubCategoryController extends Controller
      * @param  \App\Models\Category  $category
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
-    {
-        //
-    }
-
+ 
     /**
      * Show the form for editing the specified resource.
      *
