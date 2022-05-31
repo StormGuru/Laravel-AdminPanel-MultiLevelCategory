@@ -14,11 +14,7 @@ class SubCategoryController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    // public function index()
-    // {
-    //     //
-    // }
-
+ 
     /**
      * Show the form for creating a new resource.
      *
@@ -42,7 +38,6 @@ class SubCategoryController extends Controller
             'sub_name' => 'string',
             'category_id' => ''
         ]);
-        // dd($data);
         SubCategory::create($data);
         return redirect()->route('categories.index');
     }
@@ -57,7 +52,6 @@ class SubCategoryController extends Controller
     {
         $sub_category = SubCategory::findOrFail($id);
         $sub_sub_ctgs = $sub_category->sub_sub_ctgs;
-        // dd($category1->sub_ctgs);
         return view('admin.sub_category.show', compact('sub_category', 'sub_sub_ctgs'));
     }
 
@@ -88,7 +82,6 @@ class SubCategoryController extends Controller
             'sub_name' => 'string',
             'category_id' => ''
         ]);
-        //dd($data);
         $sub_category->update($data);
         return redirect()->route('categories.index');
     }
